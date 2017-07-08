@@ -73,6 +73,9 @@ a {
 .padding-right-ten {
 	padding-right: 10px;
 }
+.padding-ten {
+	padding: 10px 10px 10px 10px;
+}
 .padding-twenty {
 	padding: 20px 20px 20px 20px;
 }
@@ -89,11 +92,17 @@ a {
 .margin-right-twenty {
 	margin-right: 20px;
 }
+.margin-bottom-twenty {
+	margin-bottom: 20px;
+}
 .margin-left-ten {
-	padding-left: 10px;
+	margin-left: 10px;
 }
 .margin-right-ten {
-	padding-right: 10px;
+	margin-right: 10px;
+}
+.margin-bottom-ten {
+	margin-bottom : 10px;
 }
 /***** common padding and margin styles ends here *****/
 
@@ -103,6 +112,9 @@ a {
 }
 .bg-f0 {
 	background-color: #F0F0F0;
+}
+.bg-white {
+	background-color: #FFF;
 }
 /***** common bgcolor styles ends here *****/
 
