@@ -1,4 +1,148 @@
+@font-face {font-family: 'BrandonGrotesque-Bold';src: url('/src/css/fonts/BrandonGrotesque-Bold.otf') format('truetype');}
+@font-face {font-family: 'BrandonGrotesque-Medium';src: url('/src/css/fonts/BrandonGrotesque-Medium.otf') format('truetype');}
+@font-face {font-family: 'BrandonGrotesque-Regular';src: url('/src/css/fonts/BrandonGrotesque-Medium.otf') format('truetype');}
+
 body {
 	margin: 0;
-	padding: 0; 
+	padding: 0;
+	font-family: 'BrandonGrotesque-Medium'; 
 }
+a {
+	text-decoration: none;
+}
+#app-main-container {
+	padding-top : 90px;
+	max-width: 1100px;
+    margin: auto;
+}
+
+/****** theme css starts here *******/
+.inline-block {
+	display:inline-block;
+}
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+.relative {
+	position: relative;
+}
+.absolute {
+	position: absolute;
+}
+.clear {
+	position: relative;
+	overflow: hidden;
+}
+.pointer {
+	cursor: pointer;
+}
+.text-center {
+	text-align: center;
+}
+/******* font family ******/
+.app-font-bold {
+    font-family: BrandonGrotesque-Bold;
+}
+/******* font family ******/
+
+/***** common fontsize goes here *****/
+.font-size-14 {
+	font-size : 14px;
+}
+.font-size-18 {
+	font-size: 18px;
+}
+.font-size-20 {
+	font-size: 20px;
+}
+.font-size-24 {
+	font-size: 24px;
+}
+.font-size-28 {
+	font-size: 28px;
+}
+/***** common fontsize  goes here *****/
+
+/***** common padding and margin styles goes here *****/
+.padding-left-ten {
+	padding-left: 10px;
+}
+.padding-right-ten {
+	padding-right: 10px;
+}
+.padding-twenty {
+	padding: 20px 20px 20px 20px;
+}
+.padding-left-twenty {
+	padding-left: 20px;
+}
+.padding-right-twenty {
+	padding-right: 20px;
+}
+
+.margin-left-twenty {
+	margin-left: 20px;
+}
+.margin-right-twenty {
+	margin-right: 20px;
+}
+.margin-left-ten {
+	padding-left: 10px;
+}
+.margin-right-ten {
+	padding-right: 10px;
+}
+/***** common padding and margin styles ends here *****/
+
+/***** common bgcolor styles goes here *****/
+.bg-24 {
+	background-color: #24374a;
+}
+.bg-f0 {
+	background-color: #F0F0F0;
+}
+/***** common bgcolor styles ends here *****/
+
+/***** common color styles goes here *****/
+.color-white {
+	color : #FFF;
+}
+.color-dark-blue {
+	color: #24374a;
+}
+/***** common color styles goes here *****/
+
+.box-shadow-one {
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+}
+.active {
+	border-bottom: 1px solid #FFF;
+}
+.full-width {
+	width: 100%;
+}
+.full-height {
+	height: 100%;
+}
+
+.theme-sprite {
+  background-image: url(../images/sprite.png);
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+.theme-sprite.search-icon {
+  background-position: -10px -10px;
+  width: 25px;
+  height: 25px;
+  right: 20px;
+  top: 18px;
+  position: absolute;
+}
+.product-text {
+    margin: 20px auto 20px auto;
+    max-width: 900px;
+}
+/****** theme css ends here *******/

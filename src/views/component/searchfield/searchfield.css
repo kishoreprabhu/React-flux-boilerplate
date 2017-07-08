@@ -1,0 +1,7 @@
+.search_bar_wrapper {
+    height: 60px;
+}
+.search_bar_wrapper div input {
+    border : 0;
+    outline : none;
+}

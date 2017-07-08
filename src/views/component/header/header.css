@@ -1,0 +1,25 @@
+
+.header_wrap {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 70;
+}
+.app_logo {
+    width: 150px;
+}
+.menu_list_wrap {
+    padding-left: 40px;
+}
+.menu_list_wrap > li:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+.menu_list_wrap > li:hover a {
+    opacity: 0.8; 
+}
+.menu_list_wrap li > a {
+    color: #FFF;
+}
+.auth_line_height {
+    line-height: 33px;
+}
