@@ -8,6 +8,13 @@ export default class Home extends React.Component {
 			picList: []
         };
 	}
+     componentWillReceiveProps(nextProps) {
+		let newValue = nextProps.picdata;
+        console.log(this.state.picList, "old")
+        let newState = this.state.picList.concat(newValue);
+        console.log(newState, "new")
+        this.setState({picList : newState});
+	  }
     componentWillMount() {
         this.setState({picList : this.props.picdata ? this.props.picdata : [] });
     }

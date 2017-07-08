@@ -16,23 +16,39 @@ export default class Home extends React.Component {
 		this.state = {
 	       isLoading: true	   
 	   }
-	  this.getAllPhotos();
+	   this.pageNo = 1;
+	   this.getAllPhotos();
 	}
-	getAllPhotos() {
+	getAllPhotos( pageNo ) {
 		let options = {},
-			url = "https://api.unsplash.com/photos/?client_id=bfe2cf7ed50e5419f1c399581f941e2cde4c35fc51dfb90c41fede82e4bd7912";
+			pageNumber = pageNo ? pageNo : this.pageNo, 
+			url = "https://api.unsplash.com/photos/?client_id=bfe2cf7ed50e5419f1c399581f941e2cde4c35fc51dfb90c41fede82e4bd7912&page="+pageNumber;
 		options.url = url;
 		this.action.getAllLibraryPic(options);
 	}
+	attachScrollEvent() {
+		window.addEventListener("scroll", (event) => {
+			console.log(this.dataLoading);
+			if ((window.innerHeight + window.scrollY) >= ( document.body.offsetHeight - 50) && !this.dataLoading) {
+				let pageNo = this.pageNo + 1;
+				this.pageNo = pageNo;
+				this.dataLoading = true;
+				this.getAllPhotos( pageNo );				
+			}
+		});
+	}
 	componentDidMount() {
 		this.listener = this.store.addListener(this.onStateChanged.bind(this));
+		this.dataLoading = false;
+		this.attachScrollEvent();
 	}
 	componentWillUnmount() {
 		this.listener.remove();
 	}
 	onStateChanged() {
 		var data = this.store.getState().toJSON();
-		console.log(data, "from server");
+		this.pageNo = this.pageNo ? this.pageNo : 1;
+		this.dataLoading = false;
 		this.setState(data);
 	}
 	render() { 

@@ -13,12 +13,13 @@ module.exports = {
 				if (req.status === 200) {
 					response.status = req.status;
 					response.success = true;
-					response.data = JSON.parse( req.responseText );
+					response.data = req.responseText ? JSON.parse( req.responseText ) : {};
 					resolve( response );
 				} else {
 					response.status = req.status;
 					response.success = false;
-					response.data = JSON.parse( req.responseText );
+					console.log(req.responseText, "error");
+					response.data = typeof req.responseText === "object" ? JSON.parse( req.responseText ) : {};
 					reject( response );
 				}
 			};
