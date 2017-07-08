@@ -20,9 +20,10 @@ export default class Home extends React.Component {
 	   }
 	   this.pageNo = 1;
 	   this.getAllPhotos();
-        console.log(this.props);
+        console.log(this.props, "super");
 	}
 	getAllPhotos( pageNo ) {
+		console.log("get all pic");
 		let options = {},
 			pageNumber = pageNo ? pageNo : this.pageNo, 
             query = this.props.params.id,
@@ -40,6 +41,9 @@ export default class Home extends React.Component {
 			}
 		});
 	}
+	componentWillReceiveProps(nextProps) {
+		console.log(nextProps);
+	}
 	componentDidMount() {
 		this.listener = this.store.addListener(this.onStateChanged.bind(this));
 		this.dataLoading = false;
@@ -56,10 +60,11 @@ export default class Home extends React.Component {
         console.log(data);
 	}
 	keyupHandler( event ) {
+		console.log("child keyup");
 		var searchField = event.currentTarget,
 			searchedValue = searchField.value,
 			routeTo = "/spoylpic/search/"+searchedValue;
-		if ( event.keyCode === 13 ) {
+		if ( event.keyCode === 13  && searchedValue ) {
 			browserHistory.push(routeTo);
 		}
 	}

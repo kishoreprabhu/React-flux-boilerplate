@@ -6,7 +6,9 @@ export default class Header extends React.Component {
 	   return (
 				<header className={"bg-24 color-white"+' '+Styles.header_wrap}>
 				   <div className="clear padding-twenty">
-						<div className={"inline-block font-size-24 padding-left-ten"+' '+Styles.app_logo}>Spoyl Pic's</div>
+						<div className={"inline-block font-size-24 padding-left-ten pointer"+' '+Styles.app_logo}>
+							<Link to="/"> Spoyl Pic's</Link>
+						</div>
 						<nav className={"inline-block"+' '+Styles.menu_list_wrap}>
 							<li className="inline-block pointer margin-left-twenty margin-right-twenty font-size-20">
 								<Link to="/" activeClassName="active">Home</Link>

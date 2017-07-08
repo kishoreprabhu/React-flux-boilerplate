@@ -9,6 +9,10 @@ body {
 }
 a {
 	text-decoration: none;
+	color: #FFF;
+}
+header {
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
 }
 #app-main-container {
 	padding-top : 90px;

@@ -56,7 +56,7 @@ export default class Home extends React.Component {
 		var searchField = event.currentTarget,
 			searchedValue = searchField.value,
 			routeTo = "/spoylpic/search/"+searchedValue;
-		if ( event.keyCode === 13 ) {
+		if ( event.keyCode === 13 && searchedValue ) {
 			browserHistory.push(routeTo);
 		}
 	}
