@@ -10,9 +10,9 @@ export default class Home extends React.Component {
 	}
      componentWillReceiveProps(nextProps) {
 		let newValue = nextProps.picdata;
-        console.log(this.state.picList, "old")
+        // console.log(this.state.picList, "old")
         let newState = this.state.picList.concat(newValue);
-        console.log(newState, "new")
+        // console.log(newState, "new")
         this.setState({picList : newState});
 	  }
     componentWillMount() {
@@ -23,6 +23,7 @@ export default class Home extends React.Component {
     }
     render() {
         var tileData = this.state.picList;
+        console.log(this.props, "data");
         return (
             <div> 
                 {
@@ -36,7 +37,13 @@ export default class Home extends React.Component {
                             ) 
                         }
                     </div> :
-                    <div className="padding-twenty text-center color-light-grey font-size-25"> No Pic Found in Spoyl Pic's</div>
+                    <div className="padding-twenty text-center color-light-grey font-size-25">
+                        {
+                            this.props.isSearch === "true" ? 
+                            "No Result Found" :
+                            "No Pic Found in Spoyl Pic's"
+                        } 
+                    </div>
                 }
             </div>
         );

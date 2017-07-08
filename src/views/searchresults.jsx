@@ -10,6 +10,7 @@ import {browserHistory} from 'react-router';
 
 export default class Home extends React.Component {
 	constructor(props) {
+		console.log(" i am called ");
 		super(props);
 		this.dispatcher = AppDispatcher;
 		this.store = new Store(this.dispatcher);
@@ -19,12 +20,13 @@ export default class Home extends React.Component {
 	   }
 	   this.pageNo = 1;
 	   this.getAllPhotos();
-	   console.log(this.props);
+        console.log(this.props);
 	}
 	getAllPhotos( pageNo ) {
 		let options = {},
 			pageNumber = pageNo ? pageNo : this.pageNo, 
-			url = "https://api.unsplash.com/photos/?client_id=bfe2cf7ed50e5419f1c399581f941e2cde4c35fc51dfb90c41fede82e4bd7912&page="+pageNumber;
+            query = this.props.params.id,
+			url = "https://api.unsplash.com/search/photos?client_id=bfe2cf7ed50e5419f1c399581f941e2cde4c35fc51dfb90c41fede82e4bd7912&query="+query+"&page="+pageNumber;
 		options.url = url;
 		this.action.getAllLibraryPic(options);
 	}
@@ -51,6 +53,7 @@ export default class Home extends React.Component {
 		this.pageNo = this.pageNo ? this.pageNo : 1;
 		this.dataLoading = false;
 		this.setState(data);
+        console.log(data);
 	}
 	keyupHandler( event ) {
 		var searchField = event.currentTarget,
@@ -61,7 +64,6 @@ export default class Home extends React.Component {
 		}
 	}
 	render() { 
-		//console.log(this.state, "parent");
 			return (
 			         <div className="home-page">
 						 <SearchField fieldplaceholder="Search free high-resolution photos" keyupHandler={this.keyupHandler.bind(this)}/>
@@ -70,8 +72,8 @@ export default class Home extends React.Component {
 								 this.state.isLoading ? 
 								 	 <Spinner/> : 
 									  <div>
-										<AppDescription/>
-										<PhotoTile picdata={this.state.content}/>
+									  		<div className="padding-bottom-twenty font-size-22 color-dark-blue"> Results for <span>{this.props.params.id}</span></div>
+										    <PhotoTile isSearch="true" picdata={this.state.content && this.state.content.results ? this.state.content.results : []}/>
 									  </div>
 							 }
 						 </div>

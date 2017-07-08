@@ -4,4 +4,5 @@
 .search_bar_wrapper div input {
     border : 0;
     outline : none;
+    box-sizing: border-box;
 }
