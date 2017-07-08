@@ -58,6 +58,9 @@ a {
 .font-size-20 {
 	font-size: 20px;
 }
+.font-size-25{
+	font-size: 25px;
+}
 .font-size-24 {
 	font-size: 24px;
 }
@@ -104,6 +107,9 @@ a {
 .margin-bottom-ten {
 	margin-bottom : 10px;
 }
+.margin-auto {
+	margin : auto;
+}
 /***** common padding and margin styles ends here *****/
 
 /***** common bgcolor styles goes here *****/
@@ -124,6 +130,9 @@ a {
 }
 .color-dark-blue {
 	color: #24374a;
+}
+.color-light-grey {
+	color: #928b8b;
 }
 /***** common color styles goes here *****/
 
@@ -156,5 +165,31 @@ a {
 .product-text {
     margin: 20px auto 20px auto;
     max-width: 900px;
+}
+#page_spinner {
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    margin: auto;
+    max-width: 1100px;
+}
+.spinner_text {
+    margin: auto;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    max-width: 82px;
+}
+.spinner {
+	border: 5px solid #24374a;
+    border-radius: 50% 50%;
+    height: 30px;
+    margin: auto !important;
+    width: 30px;
+    animation: pulsate 1s ease-out;
+    animation-iteration-count: infinite;
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
 }
 /****** theme css ends here *******/
