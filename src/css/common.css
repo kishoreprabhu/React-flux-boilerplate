@@ -209,3 +209,65 @@ header {
     -webkit-animation-fill-mode: forwards;
 }
 /****** theme css ends here *******/
+ .MediaQuery-desktop-tile {
+        -webkit-column-count: 3;
+        -webkit-column-gap: 10px;
+        -webkit-column-fill: auto;
+        -moz-column-count: 3;
+        -moz-column-gap: 10px;
+        -moz-column-fill: auto;
+        column-count: 3;
+        column-gap: 15px;
+        column-fill: auto;
+}
+.MediaQuery-tab-tile {
+       -webkit-column-count: 2;
+        -moz-column-count: 2;
+          column-count: 2;
+}
+.MediaQuery-tab-tile .s_pic {
+	min-width: 0px;
+	min-height: 0px;
+}
+.mobile-menu {
+    width: 30px;
+	top: 14px;
+    line-height: 0px;
+    position: relative;
+    transition-duration: 0.5s;
+    transition-timing-function: swing;
+}
+.hambug-icon {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    transition-duration: 0.2s;
+}
+.hambug-icon:after {
+    transition-duration: 0.5s;
+    background: #fff;
+    position: absolute;
+    content: "";
+    width: 22px;
+    height: 2px;
+    left: 0px;
+}
+.hambug-icon:after {
+    transition-duration: 0.5s;
+    background: #fff;
+    position: absolute;
+    content: "";
+    width: 22px;
+    height: 2px;
+    left: 0px;
+	top: 7px;
+}
+.hambug-icon:before {
+    top: -7px;
+}

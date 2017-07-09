@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './dynamicphototile.css';
+import MediaQuery from '../mediaquery/mediaqueries.jsx';
 
 export default class Home extends React.Component {
 	 constructor(props) {
@@ -16,27 +17,51 @@ export default class Home extends React.Component {
         this.setState({picList : newState});
 	  }
     componentWillMount() {
-        this.setState({picList : this.props.picdata ? this.props.picdata : [] });
+        let viewPort = this.getViewPortWidth();
+        this.setState({picList : this.props.picdata ? this.props.picdata : [], viewPort : viewPort });
     }
     componentDidMount() {
-         //console.log("didmount", this.props);
+        this.attachResizeEvent();
+    }
+    attachResizeEvent() {
+        window.addEventListener("resize", (event) => {
+            let viewPort = this.getViewPortWidth();
+            this.setState({viewPort: viewPort});
+        })
+    }
+    getViewPortWidth() {
+        var width = window.innerWidth,
+            size = "desktop";
+        if ( width <= 960 ) {
+            if ( width <= 500 ) {
+                size = "mobile";
+            } else {
+                size = "tab";
+            }
+        } 
+        return size;
     }
     render() {
-        var tileData = this.state.picList;
-        console.log(this.props, "data");
+        let tileData = this.state.picList;
+        //console.log(this.state);
         return (
             <div> 
                 {
                     (tileData && tileData.length > 0) ?
-                    <div id={styles.dynamic_pic_wrapper}>
-                        {
-                            tileData.map( (value, index) =>
-                                <div key={index} className={"margin-bottom-twenty bg-white relative inline-block padding-ten"+' '+styles.pic_tile}>
-                                    <img className="full-width" alt="Free Unsplash photo from Chris Barbalis" src={value.urls.regular}/>
-                                </div>
-                            ) 
-                        }
-                    </div> :
+                    <div>
+                        <MediaQuery size={this.state.viewPort} pageref="tile" >
+                            
+                                {
+                                    tileData.map( (value, index) =>
+                                        <div key={index} className={"margin-bottom-twenty bg-white relative inline-block padding-ten s_pic"+' '+styles.pic_tile}>
+                                            <img className="full-width" alt="Free Unsplash photo from Chris Barbalis" src={value.urls.regular}/>
+                                        </div>
+                                    ) 
+                                }
+                          
+                        </MediaQuery>
+                     </div>
+                    :
                     <div className="padding-twenty text-center color-light-grey font-size-25">
                         {
                             this.props.isSearch === "true" ? 
