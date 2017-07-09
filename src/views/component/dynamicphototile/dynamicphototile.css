@@ -4,6 +4,6 @@
     -webkit-column-break-inside: avoid;
     -moz-column-break-inside: avoid;
     column-break-inside: avoid;
-    min-height: 200px;
-    min-width: 200px;
+    min-height: 320px;
+    min-width: 320px;
 }
