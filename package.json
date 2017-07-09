@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base=dist --hot --inline --watch"
+    "start": "webpack-dev-server --content-base=dist --hot --inline --watch --open"
   },
   "author": "kishoreprabhu",
   "license": "ISC",
